@@ -2,22 +2,20 @@ package edu.iu.c322.customerservice.repository;
 
 import edu.iu.c322.customerservice.model.Customer;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Repository
+@RequestMapping
 public class InMemoryCustomerRepository{
     private List<Customer> customers = new ArrayList<>();
 
 
-    @GetMapping
     public List<Customer> findAll(){
         return customers;
     }
-
 
     public int create(Customer customer){
         int id = customers.size() + 1;

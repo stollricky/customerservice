@@ -20,6 +20,7 @@ public class CustomerController {
 
     //Get localhost:8080/customers
     @GetMapping
+    @CrossOrigin(origins = (""))
     public List<Customer> findAll(){
         return repository.findAll();
     }
